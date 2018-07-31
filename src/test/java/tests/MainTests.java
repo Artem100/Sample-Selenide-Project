@@ -3,6 +3,7 @@ package tests;
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
+import static com.codeborne.selenide.Selenide.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,14 +22,9 @@ public class MainTests {
 
     @Test
     public void userCanSearchAnyKeyword() {
-
-        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/home/driver/chromedriver");
         Configuration.browser = "chrome";
-
-        open("http://google.com");
-        $(By.name("q")).val("selenide").pressEnter();
-        $$("#ires .g").shouldHave(CollectionCondition.size(10));
-        $("#ires .g").shouldHave(Condition.text("selenide.org"));
+        open("https://mail.ukr.net/desktop/login");
     }
 
     @Test
