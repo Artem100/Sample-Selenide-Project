@@ -15,8 +15,8 @@ public class TestSelenide {
     public void test(){
         Configuration.browser = "chrome";
         open("http://jira.hillel.it:8080/login.jsp");
-        loginBySelenide.loginField("webinar5");
-        loginBySelenide.passwordField("webinar5");
+        loginBySelenide.loginField("");
+        loginBySelenide.passwordField("");
         loginBySelenide.loginButton();
     }
 }
