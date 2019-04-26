@@ -2,6 +2,7 @@ package tests;
 
 import com.codeborne.selenide.Configuration;
 import org.openqa.selenium.By;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.LoginBySelenide;
 
@@ -15,9 +16,11 @@ import static com.codeborne.selenide.Selenide.open;
 public class TestSelenide {
     public static LoginBySelenide loginBySelenide = new LoginBySelenide();
 
+    @BeforeMethod
+    public void setup(){ Configuration.browser = "chrome";}
+
     @Test
     public void test(){
-        Configuration.browser = "chrome";
         open("http://jira.hillel.it:8080/login.jsp");
         loginBySelenide.loginField("");
         loginBySelenide.passwordField("");
